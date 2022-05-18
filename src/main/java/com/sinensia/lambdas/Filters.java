@@ -57,5 +57,22 @@ public final class Filters {
         }
         return res;
     }
+
+    public static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
+        List<T> res = new ArrayList<T>();
+        if (list == null) {
+            throw new IllegalArgumentException("arguments cant be null");
+        }
+        if (list.isEmpty()) {
+            return list;
+        }
+
+        for (T t : list) {
+            if (t != null && predicate.test(t)) {
+                res.add(t);
+            }
+        }
+        return res;
+    }
 }
 

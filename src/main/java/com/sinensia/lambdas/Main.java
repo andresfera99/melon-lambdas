@@ -36,6 +36,33 @@ public class Main {
             System.out.println(melon.toString());
         }
 
+        System.out.println("Lista melones pesados");
+
+        List<Melon> heavy = Filters.filterMelon(melons, new HeavyMelonPredicate());
+        for (Melon melon : heavy) {
+            System.out.println(melon.toString());
+        }
+
+
+        System.out.println("Lista melones pesados 2");
+
+        //clase anonima que implementa MelonPredicate
+        List<Melon> tooheavy = Filters.filterMelon(melons, new MelonPredicate() {
+            @Override
+            public boolean test(Melon melon) {
+                return melon != null && melon.getWeight() >= 6000;
+            }
+        });
+        List<Melon> lambdaheavy = Filters.filterMelon(melons, melon -> melon != null && melon.getWeight() >= 6000);
+        for (Melon melon : tooheavy) {
+            System.out.println(melon.toString());
+        }
+
+        System.out.println("Lista sandias");
+        List<Melon> as = Filters.filter(melons, (Melon m) -> "watermelon".equalsIgnoreCase(m.getType()));
+        for (Melon m : as) {
+            System.out.println(m);
+        }
 
     }
 
