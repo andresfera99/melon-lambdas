@@ -2,6 +2,7 @@ package com.sinensia.lambdas;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
 
@@ -64,6 +65,14 @@ public class Main {
             System.out.println(m);
         }
 
+        System.out.println("HOLISSSS");
+        melons.stream().forEach(x -> System.out.println(x.toString()));
+
+        Optional<Melon> primero = melons.stream().findFirst(); //se wrappea en un optional por si no existiese el primero
+        if (primero.isPresent()) {
+            System.out.println(primero.get());
+        }
+        primero.ifPresent(melon -> System.out.println(melon));
     }
 
 

@@ -59,7 +59,7 @@ public final class Filters {
     }
 
     public static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
-        List<T> res = new ArrayList<T>();
+        List<T> res = new ArrayList<>();
         if (list == null) {
             throw new IllegalArgumentException("arguments cant be null");
         }
