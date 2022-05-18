@@ -1,6 +1,5 @@
 package com.sinensia.lambdas;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +26,13 @@ public class Main {
         System.out.println("Lista filtrada por peso");
         List<Melon> weightMelons = Filters.filterByWeigh(melons, 1200);
         for (Melon melon : weightMelons) {
+            System.out.println(melon.toString());
+        }
+
+        System.out.println("Lista melones gac");
+        GacMelonPredicate gacMelonPredicate = new GacMelonPredicate();
+        List<Melon> gac = Filters.filterMelon(melons, gacMelonPredicate);
+        for (Melon melon : gac) {
             System.out.println(melon.toString());
         }
 
