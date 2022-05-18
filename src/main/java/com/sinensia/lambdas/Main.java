@@ -24,10 +24,14 @@ public class Main {
         for (Melon melon : bailan) {
             System.out.println(melon.toString());
         }
+        System.out.println("Lista filtrada por peso");
+        List<Melon> weightMelons = Filters.filterByWeigh(melons, 1200);
+        for (Melon melon : weightMelons) {
+            System.out.println(melon.toString());
+        }
+
 
     }
-
-
 
 
 }

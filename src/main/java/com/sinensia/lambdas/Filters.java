@@ -24,4 +24,21 @@ public final class Filters {
         }
         return res;
     }
+
+    public static List<Melon> filterByWeigh(List<Melon> melons, int weight) {
+        List<Melon> res = new ArrayList<>();
+        if (melons == null) {
+            throw new IllegalArgumentException("arguments cant be null");
+        }
+        if (melons.isEmpty()) {
+            return melons;
+        }
+        for (int i = 0; i < melons.size(); ++i) {
+            if (melons.get(i).getWeight() == weight) {
+                res.add(melons.get(i));
+            }
+        }
+        return res;
+    }
 }
+
